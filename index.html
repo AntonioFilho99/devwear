@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevWear — Roupas para Quem Codifica</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">Dev<span>Wear</span><span style="color:var(--green)">_</span></div>
+  <div class="nav-links">
+    <a href="#produtos">Produtos</a>
+    <a href="#colecao">Coleção</a>
+    <a href="#newsletter">Newsletter</a>
+  </div>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Carrinho
+      <span id="cart-count">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">nova coleção 2025</div>
+  <h1 class="hero-title">
+    Use o que você<br>
+    <span class="typed-wrap" id="typed"></span><span class="cursor">█</span>
+  </h1>
+  <p class="hero-sub">Roupas com identidade dev. Para quem passa mais tempo no terminal do que no espelho — mas ainda quer ter estilo.</p>
+  <div class="hero-cta">
+    <a href="#produtos" class="btn-primary">Ver Coleção →</a>
+    <a href="#newsletter" class="btn-ghost">Receber novidades</a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <span class="ticker-inner">
+    FREE SHIPPING acima de R$199 &nbsp;★&nbsp; CAMISETAS &nbsp;★&nbsp; MOLETONS &nbsp;★&nbsp; BONÉS &nbsp;★&nbsp; CANECAS &nbsp;★&nbsp; NOVAS ESTAMPAS TODO MÊS &nbsp;★&nbsp; FREE SHIPPING acima de R$199 &nbsp;★&nbsp; CAMISETAS &nbsp;★&nbsp; MOLETONS &nbsp;★&nbsp; BONÉS &nbsp;★&nbsp; CANECAS &nbsp;★&nbsp; NOVAS ESTAMPAS TODO MÊS &nbsp;★&nbsp;
+  </span>
+</div>
+
+
+
+
+ 
+<!-- PRODUTOS -->
+<script type="module">
+  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+
+  Typebot.initPopup({ typebot: "dev-wear-chatbot-de-atendimento-u7ajfp8" });
+</script>
+
+
+  <div class="filter-tabs" id="filter-tabs">
+    <button class="filter-tab active" data-filter="all">Todos</button>
+    <button class="filter-tab" data-filter="camiseta">Camisetas</button>
+    <button class="filter-tab" data-filter="moletom">Moletons</button>
+    <button class="filter-tab" data-filter="bone">Bonés</button>
+    <button class="filter-tab" data-filter="acessorio">Acessórios</button>
+  </div>
+
+  <div class="product-grid" id="product-grid"></div>
+</div>
+
+<!-- BANNER -->
+<div class="banner" id="newsletter">
+  <div style="position:relative;z-index:1">
+    <h2 class="banner-title">Novidade toda sprint.<br>Não perca o deploy.</h2>
+    <p class="banner-sub">Cadastre seu e-mail e receba lançamentos em primeira mão.</p>
+    <div class="email-form">
+      <input class="email-input" type="email" placeholder="seu@email.com" id="email-input">
+      <button class="email-btn" onclick="subscribe()">INSCREVER</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dev<span>Wear</span>_</div>
+  <div class="footer-copy">© 2025 DevWear. Feito com ❤️ e muito café.</div>
+</footer>
+
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-head">
+    <div class="cart-head-title">🛒 Seu Carrinho</div>
+    <button class="close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cart-body"></div>
+  <div class="cart-foot" id="cart-foot" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <span class="cart-total-val" id="cart-total-val">R$ 0,00</span>
+    </div>
+    <button class="checkout-btn" onclick="checkout()">FINALIZAR COMPRA →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
